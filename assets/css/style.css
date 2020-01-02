@@ -1,77 +1,101 @@
 * {
-    box-sizing: border-box;
+  box-sizing: border-box;
 }
 
 .navbar {
-    justify-content: center;
+  justify-content: center;
 }
 
 .navbar-brand {
-    font-size: 35px;
+  font-size: 35px;
 }
 
 .container {
-    height: 450px;
+  height: 530px;
 }
 
 .main {
-    height: 100%;
+  height: 100%;
 }
 
 .left {
-    background-color: lightgray;
-    height: 100%;
+  background-color: lightgray;
+  height: 100%;
 }
 
 .right {
-    height: 100%;
+  height: 100%;
 }
 
 .current {
-    height: 60%;
-    border: solid 1px lightgray;
-    margin: 10px;
-    border-radius: 5px;
+  height: 58%;
+  border: solid 1px lightgray;
+  margin: 10px;
+  border-radius: 5px;
+  padding: 10px;
 }
 
+.current-content {
+  line-height: 35px;
+}
+
+.curr-city {
+  font-size: 30px;
+  font-weight: bold;
+}
 .five-day {
-    height: 40%;
-    margin-left: 10px;
-    margin-top: 5px;
+  height: 40%;
+  margin-left: 10px;
+  margin-top: 5px;
+}
+
+.five-day-content {
+  width: 100%;
 }
 
 .search {
-    background-color: dodgerblue;
-    border-radius: 5px;
+  background-color: dodgerblue;
+  border-radius: 5px;
 }
 
-.fas {
-    color: white;
+.fa-search {
+  color: white;
 }
 
 input {
-    border-radius: 5px;
-    outline: none;
+  padding: 2px;
+  border-radius: 5px;
+  outline: none;
 }
 
 input:focus {
-    border-color: black;
+  border-color: black;
 }
 
 .saved-search {
-    width: 100%;
-    padding: 5px;
+  width: 100%;
+  padding: 5px;
 }
 
 .forecast-header {
-    margin-left: 10px;
-    margin-bottom: 0px;
+  margin-left: 10px;
+  margin-bottom: 0px;
 }
 
-img {
-    border-radius: 5px;
-    background-color: dodgerblue;
-    height: 130px;
-    width: 15%;
-    margin-right: 20px;
+.day {
+  color: white;
+  display: inline-block;
+  border-radius: 5px;
+  background-color: dodgerblue;
+  margin-right: 15px;
+}
+
+.uv-index {
+  color: white;
+  background-color: red;
+  padding: 2px;
+}
+
+.hide {
+  display: none;
 }

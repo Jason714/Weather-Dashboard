@@ -21,41 +21,48 @@
       <div class="row main">
         <div class="col-3 left">
           <h5>Search for a City:</h5>
-          <input type="text" /><button class="search">
+          <input id="city" type="text" autocomplete="off" /><button
+            class="search"
+          >
             <i class="fas fa-search"></i>
           </button>
           <br /><br />
-
-          <input class="saved-search" type="text" readonly />
-          <input class="saved-search" type="text" readonly />
-          <input class="saved-search" type="text" readonly />
-          <input class="saved-search" type="text" readonly />
-          <input class="saved-search" type="text" readonly />
-          <input class="saved-search" type="text" readonly />
-          <input class="saved-search" type="text" readonly />
-          <input class="saved-search" type="text" readonly />
         </div>
         <div class="col-9 right">
-          <div class="row current"></div>
-          <h5 class="forecast-header">5-Day Forecast:</h5>
-          <div class="row five-day">
-            <img />
-            <img />
-            <img />
-            <img />
-            <img />
+          <div id="current" class="row current">
+            <div class="current-content">
+              <h4>
+                <span class="curr-city"></span><span class="curr-date"></span
+                ><img class="curr-icon" />
+              </h4>
+
+              <p class="curr-temp"></p>
+              <p class="curr-humid"></p>
+              <p class="curr-speed"></p>
+
+              <span class="curr-index"></span
+              ><span class="uv-index hide"></span>
+            </div>
+          </div>
+          <div id="five-day" class="row five-day">
+            <div class="five-day-content">
+              <h5>5-Day Forecast:</h5>
+              <div class="col-2 day day1"></div>
+              <div class="col-2 day day2"></div>
+              <div class="col-2 day day3"></div>
+              <div class="col-2 day day4"></div>
+              <div class="col-2 day day5"></div>
+            </div>
+          </div>
         </div>
       </div>
     </div>
-    <script
-      src="https://code.jquery.com/jquery-3.4.1.min.js"
-      integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
-      crossorigin="anonymous"
-    ></script>
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
     <script
       src="https://kit.fontawesome.com/8e6f58b73d.js"
       crossorigin="anonymous"
     ></script>
-    <scrpit type="text/javascript" src="assets/js/script.js"></scrpit>
+    <script src="assets/js/script.js"></script>
   </body>
 </html>
