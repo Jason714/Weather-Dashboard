@@ -138,7 +138,13 @@ function displayFiveDay() {
     // Variable to reference the first day forecasted in the html framework
     var dayOne = $(".day1");
     // Creating a p tag and appending it's text to be the date returned from the API call
-    dayOne.append($("<p>").text(response.list[0].dt_txt.substring(0, 10)));
+    dayOne.append(
+      $("<p>").text(
+        moment()
+          .add(1, "days")
+          .format("L")
+      )
+    );
     // Creating an img tag and appending it's attribute to be an href pointing to icon data returned from the API call
     dayOne.append(
       $("<img class='icon'>").attr(
@@ -165,7 +171,13 @@ function displayFiveDay() {
     // Variable to reference the second day forecasted in the html framework
     var dayTwo = $(".day2");
     // Creating a p tag and appending it's text to be the date returned from the API call
-    dayTwo.append($("<p>").text(response.list[8].dt_txt.substring(0, 10)));
+    dayTwo.append(
+      $("<p>").text(
+        moment()
+          .add(2, "days")
+          .format("L")
+      )
+    );
     // Creating an img tag and appending it's attribute to be an href pointing to icon data returned from the API call
     dayTwo.append(
       $("<img class='icon'>").attr(
@@ -192,7 +204,13 @@ function displayFiveDay() {
     // Variable to reference the third day forecasted in the html framework
     var dayThree = $(".day3");
     // Creating a p tag and appending it's text to be the date returned from the API call
-    dayThree.append($("<p>").text(response.list[16].dt_txt.substring(0, 10)));
+    dayThree.append(
+      $("<p>").text(
+        moment()
+          .add(3, "days")
+          .format("L")
+      )
+    );
     // Creating an img tag and appending it's attribute to be an href pointing to icon data returned from the API call
     dayThree.append(
       $("<img class='icon'>").attr(
@@ -219,7 +237,13 @@ function displayFiveDay() {
     // Variable to reference the fourth day forecasted in the html framework
     var dayFour = $(".day4");
     // Creating a p tag and appending it's text to be the date returned from the API call
-    dayFour.append($("<p>").text(response.list[24].dt_txt.substring(0, 10)));
+    dayFour.append(
+      $("<p>").text(
+        moment()
+          .add(4, "days")
+          .format("L")
+      )
+    );
     // Creating an img tag and appending it's attribute to be an href pointing to icon data returned from the API call
     dayFour.append(
       $("<img class='icon'>").attr(
@@ -246,7 +270,13 @@ function displayFiveDay() {
     // Variable to reference the fifth day forecasted in the html framework
     var dayFive = $(".day5");
     // Creating a p tag and appending it's text to be the date returned from the API call
-    dayFive.append($("<p>").text(response.list[32].dt_txt.substring(0, 10)));
+    dayFive.append(
+      $("<p>").text(
+        moment()
+          .add(5, "days")
+          .format("L")
+      )
+    );
     // Creating an img tag and appending it's attribute to be an href pointing to icon data returned from the API call
     dayFive.append(
       $("<img class='icon'>").attr(
