@@ -2,6 +2,8 @@
   box-sizing: border-box;
 }
 
+/**Header**/
+
 .navbar {
   justify-content: center;
 }
@@ -10,22 +12,32 @@
   font-size: 35px;
 }
 
+/**Main container**/
+
 .container {
   height: 530px;
 }
 
+/**Main display**/
+
 .main {
   height: 100%;
 }
+
+/**Left sidebar (search)**/
 
 .left {
   background-color: lightgray;
   height: 100%;
 }
 
+/**Right display area (current weather and five-day forecast**/
+
 .right {
   height: 100%;
 }
+
+/**Current weather diplay area**/
 
 .current {
   height: 58%;
@@ -43,6 +55,19 @@
   font-size: 30px;
   font-weight: bold;
 }
+
+.uv-index {
+  color: white;
+  background-color: red;
+  padding: 2px;
+}
+
+.hide {
+  display: none;
+}
+
+/**Five-day weather display area**/
+
 .five-day {
   height: 40%;
   margin-left: 10px;
@@ -52,6 +77,21 @@
 .five-day-content {
   width: 100%;
 }
+
+.forecast-header {
+  margin-left: 10px;
+  margin-bottom: 0px;
+}
+
+.day {
+  color: white;
+  display: inline-block;
+  border-radius: 5px;
+  background-color: dodgerblue;
+  margin-right: 15px;
+}
+
+/**Search sidebar**/
 
 .search {
   background-color: dodgerblue;
@@ -75,27 +115,4 @@ input:focus {
 .saved-search {
   width: 100%;
   padding: 5px;
-}
-
-.forecast-header {
-  margin-left: 10px;
-  margin-bottom: 0px;
-}
-
-.day {
-  color: white;
-  display: inline-block;
-  border-radius: 5px;
-  background-color: dodgerblue;
-  margin-right: 15px;
-}
-
-.uv-index {
-  color: white;
-  background-color: red;
-  padding: 2px;
-}
-
-.hide {
-  display: none;
 }

@@ -4,7 +4,8 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-    <title>Document</title>
+    <title>Weather Dashboard</title>
+    <!--CSS links to Bootstrap and local-->
     <link
       rel="stylesheet"
       href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
@@ -14,11 +15,14 @@
     <link rel="stylesheet" href="assets/css/style.css" />
   </head>
   <body>
+    <!--Header-->
     <nav class="navbar navbar-dark bg-dark">
       <span class="navbar-brand mb-0 h1">Weather Dashboard</span>
     </nav>
+    <!--Main contnent container-->
     <div class="container">
       <div class="row main">
+        <!--Search sidebar-->
         <div class="col-3 left">
           <h5>Search for a City:</h5>
           <input id="city" type="text" autocomplete="off" /><button
@@ -28,22 +32,23 @@
           </button>
           <br /><br />
         </div>
+        <!--Display section-->
         <div class="col-9 right">
+          <!--Current Weather display section-->
           <div id="current" class="row current">
             <div class="current-content">
               <h4>
                 <span class="curr-city"></span><span class="curr-date"></span
                 ><img class="curr-icon" />
               </h4>
-
               <p class="curr-temp"></p>
               <p class="curr-humid"></p>
               <p class="curr-speed"></p>
-
               <span class="curr-index"></span
               ><span class="uv-index hide"></span>
             </div>
           </div>
+          <!--Five Day Forecast section-->
           <div id="five-day" class="row five-day">
             <div class="five-day-content">
               <h5>5-Day Forecast:</h5>
@@ -57,6 +62,7 @@
         </div>
       </div>
     </div>
+    <!--Javascript links to jQuery, Moment and local-->
     <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
     <script
