@@ -84,7 +84,7 @@ function diplayCurrent() {
     // Append the weather representation icon that is returned from the API call
     $(".curr-icon").attr(
       "src",
-      "http://openweathermap.org/img/w/" + response.weather[0].icon + ".png"
+      "https://openweathermap.org/img/w/" + response.weather[0].icon + ".png"
     );
     // Append the temperature that is returned from the API call
     $(".curr-temp").text(
@@ -101,7 +101,7 @@ function diplayCurrent() {
     // API call to get the UV index using the Lat & Lon that were returned from the original API call
     $.ajax({
       url:
-        "http://api.openweathermap.org/data/2.5/uvi?appid=7a467ef5535c9765c6faa560b6033702&lat=" +
+        "https://api.openweathermap.org/data/2.5/uvi?appid=7a467ef5535c9765c6faa560b6033702&lat=" +
         response.coord.lat +
         "&lon=" +
         response.coord.lon,
