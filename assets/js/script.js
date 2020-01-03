@@ -93,6 +93,8 @@ function diplayCurrent() {
 }
 // Get the five-day forecast and diplay the returned information
 function displayFiveDay() {
+  // Removing any child elements that might be in the days that will be displayed
+  $(".day").empty();
   // Variable to get the city to be searched from the searchedCity array
   var city = searchedCity[0];
   // URL to be used when making our API call
