@@ -49,12 +49,9 @@ function renderCities() {
 }
 
 // Listener for a searched city element to be clicked and function to get it's data-name value
-$(".searched").on("click", function(e) {
-  e.preventDefault();
-  $(".saved").empty();
+$(document).on("click", ".searched", function() {
   // Varible that will get the data-name value of the element that was clicked
   var city = $(this).data("name");
-  console.log(city);
   // Remove the city from the searcedCity array
   searchedCity = $.grep(searchedCity, function(value) {
     return value != city;
@@ -274,5 +271,6 @@ function displayFiveDay() {
       $("<p>").text("Humidity: " + response.list[32].main.humidity + "%")
     );
   });
+  // Call the renderCities function
   renderCities();
 }
