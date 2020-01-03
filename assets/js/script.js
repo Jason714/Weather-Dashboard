@@ -1,21 +1,18 @@
 // Variable array that will store searched cities
 var searchedCity = [];
-console.log(searchedCity);
 
-// init();
-
-// function init() {
-//   // Parsing the JSON string to an object
-//   var storedCities = JSON.parse(localStorage.getItem("cities"));
-
-//   // If todos were retrieved from localStorage, update the todos array to it
-//   if (storedCities !== null) {
-//     currentCity = storedCities;
-//   }
-
-//   // Render todos to the DOM
-//   renderCities();
-// }
+init();
+// Function that will get any saved cities from local storage
+function init() {
+  // Parsing the JSON string to an object
+  var storedCities = JSON.parse(localStorage.getItem("cities"));
+  // If cities were retrieved from localStorage, update the searchedCity array to it
+  if (storedCities !== null) {
+    searchedCity = storedCities;
+  }
+  // Call the renderCities function
+  renderCities();
+}
 
 // Listener for search click and function to get the city from user input and push it to the [0] position in the searchedCity array, also calls the next functions to be executed
 $(".search").on("click", function(e) {
@@ -24,20 +21,51 @@ $(".search").on("click", function(e) {
   var city = $("#city")
     .val()
     .trim();
-  // Push the city to the [0] position of the searchedCity array
-  searchedCity.unshift(city);
+  // Statement to check if array already contains the users input, if not push the new city to the [0] position in the searchedCity array
+  if (searchedCity.includes(city) === false) searchedCity.unshift(city);
   // Call the next functions
   storeCities();
-  renderCities();
   diplayCurrent();
-  displayFiveDay();
 });
+
 // Save the city that was searched to local storage
 function storeCities() {
   localStorage.setItem("cities", JSON.stringify(searchedCity));
 }
+
 // Display any saved cities to the search sidebar
-function renderCities() {}
+function renderCities() {
+  // Clear out any existing buttons when a new search is perfomed
+  $(".saved").empty();
+  // Loop to go through searchedCity array
+  for (var i = 0; i < searchedCity.length; i++) {
+    // Create new buttons from searchedCity array and set their text to each searched city
+    $(".saved").append(
+      $("<button class='searched'>")
+        .text(searchedCity[i])
+        .attr("data-name", searchedCity[i])
+    );
+  }
+}
+
+// Listener for a searched city element to be clicked and function to get it's data-name value
+$(".searched").on("click", function(e) {
+  e.preventDefault();
+  $(".saved").empty();
+  // Varible that will get the data-name value of the element that was clicked
+  var city = $(this).data("name");
+  console.log(city);
+  // Remove the city from the searcedCity array
+  searchedCity = $.grep(searchedCity, function(value) {
+    return value != city;
+  });
+  // Push the city the the [0] popsition in the searchedCity array
+  searchedCity.unshift(city);
+  // Call the next functions
+  storeCities();
+  diplayCurrent();
+});
+
 // Get the current weather and diplay the returned information
 function diplayCurrent() {
   // Variable to get the city to be searched from the searchedCity array
@@ -90,7 +118,10 @@ function diplayCurrent() {
       $(".uv-index").text(response.value);
     });
   });
+  // Call the displayFiveDay function
+  displayFiveDay();
 }
+
 // Get the five-day forecast and diplay the returned information
 function displayFiveDay() {
   // Removing any child elements that might be in the days that will be displayed
@@ -243,4 +274,5 @@ function displayFiveDay() {
       $("<p>").text("Humidity: " + response.list[32].main.humidity + "%")
     );
   });
+  renderCities();
 }
