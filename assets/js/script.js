@@ -66,17 +66,21 @@ $(document).on("click", ".searched", function() {
 // Get the current weather and diplay the returned information
 function diplayCurrent() {
   // Variable to get the city to be searched from the searchedCity array
-  var city = searchedCity[0];
-  // URL to be used when making our API call
-  var queryURL =
-    "https://api.openweathermap.org/data/2.5/weather?q=" +
-    city +
-    "&units=imperial&APPID=7a467ef5535c9765c6faa560b6033702";
+  // var city = searchedCity[0];
+  // // URL to be used when making our API call
+  // var queryURL =
+  //   "https://api.openweathermap.org/data/2.5/weather?q=" +
+  //   city +
+  //   "&units=imperial&APPID=7a467ef5535c9765c6faa560b6033702";
   // Performing the AJAX GET request
   $.ajax({
-    url: queryURL,
+    url:
+      "https://api.openweathermap.org/data/2.5/weather?q=" +
+      searchedCity[0] +
+      "&units=imperial&APPID=7a467ef5535c9765c6faa560b6033702",
     method: "GET"
   }).then(function(response) {
+    console.log(response);
     // Append the city name that is returned from the API call
     $(".curr-city").text(response.name + " ");
     // Append the current date using moment
@@ -114,9 +118,9 @@ function diplayCurrent() {
       // Append the UV index that is returned from the second API call
       $(".uv-index").text(response.value);
     });
+    // Call the displayFiveDay function
+    displayFiveDay();
   });
-  // Call the displayFiveDay function
-  displayFiveDay();
 }
 
 // Get the five-day forecast and diplay the returned information
@@ -135,6 +139,7 @@ function displayFiveDay() {
     url: queryURL,
     method: "GET"
   }).then(function(response) {
+    console.log(response);
     // Variable to reference the first day forecasted in the html framework
     var dayOne = $(".day1");
     // Creating a p tag and appending it's text to be the date returned from the API call
